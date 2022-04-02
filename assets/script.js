@@ -10,8 +10,8 @@ var hour = moment().format("H");
 // view timeblock
 function taskScheduler() {
     // 8 hour array
-    for (var i = 0; i < 9; i++) {
-        var hourBlock = hourTime.add(1, "hour").format("HH:mm");
+    for (var i = 0; i < 24; i++) {
+        var hourBlock = hourTime.add(1, "hour").format("HH:mm A");
         var blockColor;
 
         // to decide if blockColor
@@ -40,6 +40,9 @@ function taskScheduler() {
         $("#container").append(blockInsert);
     };
 
+};
+
+function saveText() {
     // click button save
     $(".saveBtn").on("click", function () {
         var text = $(this).siblings(".description").val();
@@ -47,9 +50,14 @@ function taskScheduler() {
         localStorage.setItem(time, text);
     });
 
+    // to keep text after refresh
+    for (var i = 0; i < 24; i++) {
+        $(`.hour-${i}`).val(localStorage.getItem(`hour-${i}`));
+    };    
 };
 
 
-
+// call functions
 taskScheduler();
+saveText();
 
