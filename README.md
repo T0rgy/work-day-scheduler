@@ -17,7 +17,7 @@ A straightforward schedule application that permits a client to save occasions f
 * THEN the saved events persist
 
 # Source Link : 
-*https://t0rgy.github.io/work-day-scheduler/
+* https://t0rgy.github.io/work-day-scheduler/
 
 ![img](./assets/WDS-screenshot.png)
 
