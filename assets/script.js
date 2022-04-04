@@ -10,7 +10,7 @@ var hour = moment().format("H");
 // view timeblock
 function taskScheduler() {
     // 8 hour array
-    for (var i = 0; i < 24; i++) {
+    for (var i = 0; i < 8; i++) {
         var hourBlock = hourTime.add(1, "hour").format("HH:mm A");
         var blockColor;
 
@@ -51,7 +51,7 @@ function saveText() {
     });
 
     // to keep text after refresh
-    for (var i = 0; i < 24; i++) {
+    for (var i = 0; i < 8; i++) {
         $(`.hour-${i}`).val(localStorage.getItem(`hour-${i}`));
     };    
 };
